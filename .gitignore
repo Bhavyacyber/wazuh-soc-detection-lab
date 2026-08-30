@@ -1,0 +1,31 @@
+# Secrets and credentials
+.env
+*.env
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Logs
+*.log
+logs/
+alerts.json
+archives.json
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Temporary files
+*.tmp
+*.swp
+*~
