@@ -1,8 +1,8 @@
-# PowerShell Executable Dropped in Local Temp
+# PowerShell File Created in Local Temp
 
 ## Detection Overview
 
-This detection identifies PowerShell creating an executable file in a user's `AppData\Local\Temp` directory.
+This detection identifies PowerShell creating a file in a user's `AppData\Local\Temp` directory.
 
 This behavior can be associated with malware delivery, payload staging, or execution activity.
 
@@ -21,7 +21,7 @@ This behavior can be associated with malware delivery, payload staging, or execu
 
 * Rule ID: 92213
 * Level: 15
-* Description: Executable file dropped in folder commonly used by malware
+* Description: File created in folder commonly used by malware
 * MITRE ATT&CK: T1105 - Ingress Tool Transfer
 
 ### Custom Rule
@@ -68,7 +68,7 @@ The resulting Wazuh alert was:
 ```text
 Rule ID: 100003
 Level: 15
-Description: Custom Detection: PowerShell created executable in Local Temp directory
+Description: Custom Detection: PowerShell created file in Local Temp directory
 Agent: Windows11-Target
 Event ID: 11
 ```
@@ -140,7 +140,7 @@ The live validation demonstrated:
 * Sysmon generated Event ID 11.
 * Wazuh Agent 008 received the event.
 * Wazuh Manager processed the event.
-* Built-in Rule 92213 matched the Local Temp executable creation.
+* Built-in Rule 92213 matched the Local Temp file creation.
 * Custom Rule 100003 matched the PowerShell process.
 * A Level 15 alert was generated.
 * The alert was stored in `alerts.json`.

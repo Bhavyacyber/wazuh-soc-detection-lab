@@ -58,7 +58,7 @@ The project focuses on demonstrating the complete detection pipeline from endpoi
 | ----------------------------------- | ------: | ----: | ------------------ | -------------------- | ------------------------------------------------- |
 | PowerShell Encoded Command          |  100001 |    10 | Sysmon Event ID 1  | T1059.001            | VALIDATED                                         |
 | PowerShell VSS/SAM Access           |  100002 |    12 | Sysmon Event ID 1  | T1003.002, T1059.001 | VALIDATED                                         |
-| PowerShell Executable in Local Temp |  100003 |    15 | Sysmon Event ID 11 | T1105, T1059.001     | IMPLEMENTED / VALIDATION EVIDENCE TO BE COMPLETED |
+| PowerShell File Created in Local Temp |  100003 |    15 | Sysmon Event ID 11 | T1105, T1059.001     | VALIDATED |
 
 ---
 
@@ -222,7 +222,7 @@ detections/sam-vss-access.md
 
 ---
 
-# Detection 3 — PowerShell Executable Dropped in Local Temp
+# Detection 3 — PowerShell File Created in Local Temp
 
 **Rule ID:** `100003`
 
@@ -245,7 +245,7 @@ The custom rule builds on Wazuh rule `92213` and adds a PowerShell-specific cond
 <rule id="100003" level="15">
   <if_sid>92213</if_sid>
   <field name="win.eventdata.image" type="pcre2">(?i)powershell\.exe</field>
-  <description>Custom Detection: PowerShell dropped executable in Local Temp directory</description>
+  <description>Custom Detection: PowerShell created file in Local Temp directory</description>
   <mitre>
     <id>T1105</id>
     <id>T1059.001</id>
@@ -262,7 +262,7 @@ PowerShell
 Sysmon Event ID 11
     |
     v
-Executable created in Local Temp
+File created in Local Temp
     |
     v
 Wazuh Agent
@@ -376,6 +376,7 @@ Validated evidence currently includes:
 92024 — Level 14
 100001 — Level 10
 100002 — Level 12
+100003 — Level 15
 ```
 
 Live Wazuh alerts were also verified through:
@@ -517,10 +518,5 @@ The currently validated custom detections are:
 ```text
 100001 — PowerShell Encoded Command — Level 10
 100002 — PowerShell VSS/SAM Access — Level 12
-```
-
-Additional detection engineering is in progress for:
-
-```text
-100003 — PowerShell Executable in Local Temp — Level 15
+100003 — PowerShell File Created in Local Temp — Level 15
 ```
