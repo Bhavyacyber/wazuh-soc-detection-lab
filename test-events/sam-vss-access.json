@@ -1,0 +1,12 @@
+{
+  "win": {
+    "system": {
+      "providerName": "Microsoft-Windows-Sysmon",
+      "eventID": "1"
+    },
+    "eventdata": {
+      "originalFileName": "PowerShell.EXE",
+      "commandLine": "powershell.exe C:\\HarddiskVolumeShadowCopy1\\Windows\\System32\\config\\SAM"
+    }
+  }
+}
