@@ -101,7 +101,13 @@ This confirms that the custom rule was accepted by the Wazuh analysis engine.
 
 ## Validation Status
 
-**PASS**
+Validation Status
+
+**PASS — Live Wazuh alert confirmed**
+
+Rule 100003 generated a real Level 15 alert from Sysmon Event ID 11 telemetry collected from Windows11-Target (Agent 008).
+
+Dashboard evidence was captured during validation.
 
 The detection was successfully validated through the complete telemetry pipeline:
 
