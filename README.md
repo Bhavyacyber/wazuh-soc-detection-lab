@@ -285,11 +285,30 @@ Wazuh Dashboard
 
 ### Current Status
 
-The custom detection has been implemented and documented.
+The custom detection has been implemented and successfully validated in the Wazuh SOC laboratory.
 
-A final live-alert screenshot/evidence set should be captured before marking this detection as fully validated.
+A live **Level 15 Rule 100003** alert was generated from Sysmon Event ID 11 telemetry collected from the Windows 11 endpoint.
 
-**Validation Status: IMPLEMENTED — FINAL LIVE EVIDENCE PENDING**
+The alert confirmed:
+
+```text
+Rule ID: 100003
+Level: 15
+Agent: Windows11-Target
+Agent ID: 008
+Sysmon Event ID: 11
+MITRE ATT&CK: T1105, T1059.001
+```
+
+The alert was successfully written to:
+
+```text
+/var/ossec/logs/alerts/alerts.json
+```
+
+Dashboard evidence was also captured during validation.
+
+**Validation Status: PASS — LIVE ALERT CONFIRMED**
 
 Detailed documentation:
 
@@ -482,8 +501,8 @@ In a production SOC, analysts should correlate alerts with:
 | Custom Rule 100002              | VALIDATED   |
 | Rule 92023 evidence             | CAPTURED    |
 | Rule 92024 evidence             | CAPTURED    |
-| Custom Rule 100003              | IMPLEMENTED |
-| Rule 100003 final live evidence | PENDING     |
+| Custom Rule 100003              | VALIDATED   |
+| Rule 100003 final live evidence | CAPTURED    |
 
 ---
 

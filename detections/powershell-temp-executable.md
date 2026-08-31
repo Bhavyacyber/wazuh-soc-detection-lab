@@ -42,7 +42,7 @@ win.eventdata.image = powershell.exe
 <rule id="100003" level="15">
   <if_sid>92213</if_sid>
   <field name="win.eventdata.image" type="pcre2">(?i)powershell\.exe</field>
-  <description>Custom Detection: PowerShell dropped executable in Local Temp directory</description>
+  <description>Custom Detection: PowerShell created file in Local Temp directory</description>
   <mitre>
     <id>T1105</id>
     <id>T1059.001</id>
@@ -60,7 +60,7 @@ win.eventdata.image = powershell.exe
 A controlled test generated a Sysmon Event ID 11 when PowerShell created:
 
 ```text
-C:\Users\vboxuser\AppData\Local\Temp\wazuh-custom-test.exe
+C:\Users\vboxuser\AppData\Local\Temp\__PSScriptPolicyTest_v1rij0ba.oca.ps1
 ```
 
 The resulting Wazuh alert was:
@@ -68,7 +68,7 @@ The resulting Wazuh alert was:
 ```text
 Rule ID: 100003
 Level: 15
-Description: Custom Detection: PowerShell dropped executable in Local Temp directory
+Description: Custom Detection: PowerShell created executable in Local Temp directory
 Agent: Windows11-Target
 Event ID: 11
 ```
