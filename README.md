@@ -507,6 +507,34 @@ In a production SOC, analysts should correlate alerts with:
 
 ---
 
+# Detection Coverage
+
+The lab currently contains three validated custom Wazuh detections.
+
+| Detection | Sysmon Event | Parent Rule | Custom Rule | Level | MITRE ATT&CK | Validation |
+|---|---:|---:|---:|---:|---|---|
+| PowerShell Encoded Command | Event ID 1 | 92057 | 100001 | 10 | T1059.001 | PASS |
+| PowerShell VSS/SAM Access | Event ID 1 | 92023 | 100002 | 12 | T1003.002, T1059.001 | PASS |
+| PowerShell File Created in Local Temp | Event ID 11 | 92213 | 100003 | 15 | T1105, T1059.001 | PASS |
+
+## Detection Engineering Evidence
+
+Each custom detection was validated using real endpoint telemetry generated in the controlled Windows 11 laboratory environment.
+
+The validation process included:
+
+1. Generating controlled activity on the Windows 11 endpoint.
+2. Capturing telemetry through Sysmon.
+3. Collecting telemetry with Wazuh Agent 008.
+4. Processing events through the Wazuh Manager.
+5. Matching the appropriate built-in Wazuh rule.
+6. Triggering the corresponding custom detection.
+7. Verifying the resulting Wazuh alert.
+8. Confirming the alert in `/var/ossec/logs/alerts/alerts.json`.
+9. Verifying alert visibility in the Wazuh Dashboard.
+
+This demonstrates an end-to-end SOC detection pipeline from endpoint telemetry to SIEM alert generation.
+
 ## Overall Project Status
 
 **Wazuh SOC Detection Lab — ACTIVE / FUNCTIONAL**
