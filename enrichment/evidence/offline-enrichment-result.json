@@ -1,0 +1,44 @@
+{
+  "source": "Wazuh",
+  "mode": "offline",
+  "iocs": {
+    "ipv4": [
+      "8.8.8.8"
+    ],
+    "hashes": [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "domains": [
+      "example.com"
+    ]
+  },
+  "enrichment": {
+    "virustotal": {
+      "8.8.8.8": {
+        "status": "offline_test",
+        "ioc_type": "ip",
+        "source": "local_test_data",
+        "message": "VirusTotal API not queried. Offline demonstration mode."
+      },
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": {
+        "status": "offline_test",
+        "ioc_type": "sha256",
+        "source": "local_test_data",
+        "message": "VirusTotal API not queried. Offline demonstration mode."
+      },
+      "example.com": {
+        "status": "offline_test",
+        "ioc_type": "domain",
+        "source": "local_test_data",
+        "message": "VirusTotal API not queried. Offline demonstration mode."
+      }
+    },
+    "abuseipdb": {
+      "8.8.8.8": {
+        "status": "offline_test",
+        "source": "local_test_data",
+        "message": "AbuseIPDB API not queried. Offline demonstration mode."
+      }
+    }
+  }
+}

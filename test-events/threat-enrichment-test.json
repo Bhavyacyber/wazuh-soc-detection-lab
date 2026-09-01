@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-09-01T22:00:00.000+0530",
+  "rule": {
+    "id": "100001",
+    "level": 10,
+    "description": "Threat enrichment test event"
+  },
+  "agent": {
+    "name": "Windows11-Target",
+    "id": "008"
+  },
+  "data": {
+    "srcip": "8.8.8.8",
+    "domain": "example.com",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  }
+}
